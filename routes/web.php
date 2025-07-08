@@ -29,4 +29,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
 });
 
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+
+    Route::get('/admin/posts', function () {
+        return view('admin.posts.index');
+    })->name('admin.posts.index');
+});
+
 require __DIR__.'/auth.php';
