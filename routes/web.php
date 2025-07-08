@@ -33,10 +33,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
-
+    
     Route::get('/admin/posts', function () {
         return view('admin.posts.index');
     })->name('admin.posts.index');
+    
+    Route::get('/admin/comments', function () {
+        return view('admin.comments.index');
+    })->name('admin.comments.index');
 });
 
 require __DIR__.'/auth.php';
